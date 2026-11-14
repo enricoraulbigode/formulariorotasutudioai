@@ -1,0 +1,18 @@
+ROTA STUDIO AI · FORMULÁRIO DE PEDIDOS (clientes solicitam serviço)
+==================================================================
+Os pedidos caem no CRM da Apex Hub > Leads e clientes, na unidade "Rota Studio AI",
+com o serviço que o cliente escolheu (site, sistema, agente de IA, automações, social media, anúncios...).
+O config.js já está com o endereço e a chave PÚBLICA do CRM da Apex Hub.
+
+1) SUPABASE (projeto do CRM da Apex Hub) > SQL Editor > New query
+   > cole o conteúdo de unidade-rota.sql > Run   (cria a unidade "Rota Studio AI")
+
+2) GITHUB: repositório novo (ex.: rota-formulario) > "uploading an existing file"
+   > arraste o conteúdo da pasta "site" (index.html, config.js e a pasta img) > Commit changes
+
+3) VERCEL: Add New > Project > importe o repositório > Framework Preset: Other > Deploy
+
+4) Me mande o link da Vercel: eu coloco ele no botão "Ver trabalhos e solicitar serviço"
+   da página de links da Rota.
+
+Teste: abra o link, mande um pedido de teste e veja ele aparecer no CRM em Leads e clientes.
