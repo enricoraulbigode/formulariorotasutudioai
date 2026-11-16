@@ -13,7 +13,7 @@
 <link rel="icon" href="img/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&family=Michroma&display=swap" rel="stylesheet">
 <style>
 /* Rota Studio AI · página de trabalhos + pedido de serviço
    Conceito: "mapa de leads" — globo de pontos vivo no topo, vitrine de celulares com trabalhos reais,
@@ -380,10 +380,85 @@ footer a{color:var(--mut)}
   .op{grid-template-columns:34px minmax(0,1fr) 22px}
 }
 @media (prefers-reduced-motion:reduce){.roti-heroi,.roti-px img,.roti-ok{animation:none}}
+
+/* ===== LUZ DA MARCA (kit nov/2026) ===== */
+:root{--rota-bg-1:#2c2d31;--rota-bg-2:#1d1e21;--rota-bg-3:#121315;--rota-glow:118,52,98;--silver:linear-gradient(135deg,#f6f6f7,#bcbdc1)}
+html{background:#121315}
+body{background:
+  radial-gradient(ellipse 95% 62% at 0% 0%,rgba(var(--rota-glow),.58) 0%,rgba(var(--rota-glow),.355) 25%,rgba(var(--rota-glow),.18) 50%,rgba(var(--rota-glow),.055) 75%,rgba(var(--rota-glow),0) 100%),
+  radial-gradient(rgba(255,255,255,.06) 1px,transparent 1.2px) 0 0/22px 22px,
+  radial-gradient(ellipse 80% 70% at 45% 40%,var(--rota-bg-1) 0%,var(--rota-bg-2) 55%,var(--rota-bg-3) 100%);
+  background-attachment:fixed}
+.marca b{font:400 12.5px/1 'Michroma',var(--dis);letter-spacing:.06em}
+.kw{color:#141517;-webkit-text-fill-color:#141517}
+/* ===== PLANOS DE SOCIAL MEDIA (seção que abre no formulário · kit nov/2026) ===== */
+.planos{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .3s ease,opacity .3s ease,margin-top .3s ease;margin-top:0}
+.planos.aberto{grid-template-rows:1fr;opacity:1;margin-top:22px}
+.planos>.pl-cx{min-height:0;overflow:hidden;border-radius:24px}
+.pl-in{position:relative;padding:28px 26px 24px;border-radius:24px;border:1px solid var(--line);scroll-margin-top:90px;
+  background:radial-gradient(ellipse 95% 62% at 0% 0%,rgba(var(--rota-glow),.58) 0%,rgba(var(--rota-glow),.355) 25%,rgba(var(--rota-glow),.18) 50%,rgba(var(--rota-glow),.055) 75%,rgba(var(--rota-glow),0) 100%),radial-gradient(rgba(255,255,255,.06) 1px,transparent 1.2px) 0 0/22px 22px,radial-gradient(ellipse 80% 70% at 45% 40%,#2c2d31 0%,#1d1e21 55%,#121315 100%)}
+.pl-hero{position:relative;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:end}
+.pl-hero .ey{font:500 10.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--mut);display:flex;align-items:center;gap:8px}
+.pl-hero .ey i{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px rgba(61,220,132,.7)}
+.pl-hero h3{margin-top:12px;font:900 clamp(24px,3.4vw,36px)/1.05 var(--dis);letter-spacing:-.02em;color:#fff}
+.pl-hero h3 .kw{font-size:.86em;margin:8px 0 4px}
+.pl-hero h3 .it{display:block;font-size:1.04em;color:#f0f0f1}
+.pl-roti{position:relative;display:flex;align-items:center;gap:10px}
+.pl-roti img{width:96px;height:auto;transform:rotate(6deg);filter:drop-shadow(0 14px 18px rgba(0,0,0,.6))}
+.balao{position:relative;background:#f2f2f3;color:#16171a;font:500 11px/1 var(--mono);padding:9px 11px;border-radius:9px;box-shadow:0 10px 26px rgba(0,0,0,.4);white-space:nowrap}
+.balao::after{content:"";position:absolute;right:-6px;top:50%;margin-top:-6px;border:6px solid transparent;border-right:0;border-left-color:#f2f2f3}
+.pl-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px;align-items:stretch}
+.pc{position:relative;display:flex;flex-direction:column;padding:22px 18px 18px;border-radius:20px;background:#1a1b1e;border:2px solid transparent;box-shadow:0 0 0 1px var(--line),0 10px 24px rgba(0,0,0,.25);transition:transform .25s ease,box-shadow .25s ease,border-color .2s}
+.pc:hover{transform:translateY(-4px);box-shadow:0 0 0 1px var(--line),0 24px 50px rgba(0,0,0,.5)}
+.pc.on{border-color:#d9dadd;box-shadow:0 0 0 1px rgba(255,255,255,.2),0 24px 50px rgba(0,0,0,.5)}
+.pc .nm{font:500 10.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.pc .pr{margin-top:12px;display:flex;align-items:baseline;gap:4px;color:#fff}
+.pc .pr i{font:700 14px var(--dis);font-style:normal}
+.pc .pr b{font:900 30px/1 var(--dis);letter-spacing:-.02em}
+.pc .pr small{font:500 12px var(--txt);color:var(--mut)}
+.pc ul{list-style:none;margin:16px 0 18px;border-top:1px solid var(--line)}
+.pc li{display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.pc li b{min-width:28px;font:900 19px/1 var(--dis);color:#fff}
+.pc li span{font:500 13px/1.3 var(--txt);color:#cfd0d3}
+.pc li em{display:block;font:500 9px/1 var(--mono);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:#7d7e84;margin-top:5px}
+.pc .esc{margin-top:auto;width:100%;min-height:48px;border-radius:14px;border:0;background:var(--silver);color:#141517;font:800 14px var(--dis);cursor:pointer;box-shadow:inset 0 1px 0 #fff,0 8px 20px rgba(0,0,0,.35);transition:transform .2s,filter .2s}
+.pc .esc:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.pc .esc:focus-visible,.pc .wa:focus-visible,.pl-resumo button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.pc .wa{display:flex;align-items:center;justify-content:center;gap:7px;min-height:48px;margin-top:8px;border-radius:14px;border:1px solid rgba(255,255,255,.16);color:#e9e9ea;font:600 12.5px var(--txt);text-decoration:none;transition:border-color .2s,background .2s}
+.pc .wa:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.04)}
+.pc .wa svg{width:16px;height:16px;flex:none}
+.pc.prem{background:var(--silver);box-shadow:0 20px 50px rgba(0,0,0,.55),inset 0 1px 0 #fff}
+.pc.prem:hover{box-shadow:0 30px 64px rgba(0,0,0,.6),inset 0 1px 0 #fff}
+.pc.prem.on{border-color:#141517}
+.pc.prem,.pc.prem .pr,.pc.prem li b{color:#141517}
+.pc.prem .nm,.pc.prem .pr small{color:#4a4c52}
+.pc.prem ul,.pc.prem li{border-color:rgba(20,21,23,.14)}
+.pc.prem li span{color:#2a2b2f}.pc.prem li em{color:#55575d}
+.pc.prem .esc{background:#141517;color:#f6f6f7;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.pc.prem .wa{color:#141517;border-color:rgba(20,21,23,.28)}
+.pc.prem .wa:hover{background:rgba(20,21,23,.06);border-color:rgba(20,21,23,.5)}
+.pc .selo{position:absolute;right:14px;top:-11px;font:500 9.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;background:#141517;color:#f2f2f3;padding:7px 9px;border-radius:6px;transform:rotate(4deg);box-shadow:0 8px 18px rgba(0,0,0,.4)}
+.pl-erro{margin-top:14px;color:var(--erro);font:600 13.5px var(--txt);min-height:0}
+.pl-erro:empty{display:none}
+.pl-resumo{margin-top:16px;padding:14px 16px;border-radius:14px;background:rgba(18,19,21,.7);border:1px solid var(--line2,rgba(255,255,255,.18));display:flex;align-items:center;gap:12px;flex-wrap:wrap;font:500 14px/1.45 var(--txt);color:#e9e9ea}
+.pl-resumo b{font-weight:800}
+.pl-resumo span{flex:1 1 260px}
+.pl-resumo button{margin-left:auto;border:0;background:none;color:#e9e9ea;font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:44px;padding:0 4px}
+.pl-resumo[hidden]{display:none}
+@media (max-width:760px){
+  .pl-in{padding:22px 14px 18px}
+  .pl-hero{grid-template-columns:1fr}
+  .pl-roti{order:-1;justify-content:flex-end}
+  .pl-roti img{width:78px}
+  .pl-cards{grid-template-columns:1fr;gap:16px;margin-top:20px}
+  .pc{padding:20px 16px 16px}
+  .pl-resumo button{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){.planos,.pc,.pc .esc{transition:none}.pc:hover{transform:none}}
 </style>
 </head>
 <body>
-<div class="brilho-prata" aria-hidden="true"></div><div class="dots" aria-hidden="true"></div>
+
 
 <header class="topo"><div class="wrap">
   <a class="marca" href="#" aria-label="Rota Studio AI"><img src="img/hex.webp" alt="" width="26" height="29"><b>ROTA STUDIO AI</b></a>
@@ -445,6 +520,18 @@ footer a{color:var(--mut)}
       <div data-passo="1">
         <p class="passo-t" data-i="p1t"></p><p class="passo-s" data-i="p1s"></p>
         <div class="opcoes" id="interesses"></div>
+        <div class="planos" id="planos" inert>
+          <div class="pl-cx"><div class="pl-in" id="plIn" role="region" aria-labelledby="plTit">
+            <div class="pl-hero">
+              <div><span class="ey"><i></i><span data-pl="ey"></span></span><h3 id="plTit" data-pl="tit"></h3></div>
+              <div class="pl-roti" aria-hidden="true"><span class="balao" data-pl="balao"></span><img src="img/roti-3d.webp" alt="" width="96" height="124"></div>
+            </div>
+            <div class="pl-cards" id="plCards"></div>
+            <p class="pl-erro" id="plErro" role="alert"></p>
+            <div class="pl-resumo" id="plResumo" aria-live="polite" hidden></div>
+            <input type="hidden" id="fPlano" name="plano_social_media" value=""><input type="hidden" id="fPlanoValor" name="plano_social_media_valor" value="">
+          </div></div>
+        </div>
         <div class="campo inteiro" style="margin-top:20px"><label data-i="temsite"></label>
           <div class="segmentado" id="temSite"><button type="button" data-v="false" aria-pressed="false" data-i="nao"></button><button type="button" data-v="true" aria-pressed="false" data-i="sim"></button></div>
         </div>
@@ -715,6 +802,8 @@ footer a{color:var(--mut)}
     if (/America\/(Sao_Paulo|Fortaleza|Recife|Bahia|Manaus|Belem|Cuiaba|Porto_Velho|Boa_Vista|Rio_Branco|Campo_Grande|Araguaina|Maceio|Noronha)/.test(tz)) return 'pt-BR';
     return 'en';
   }
+  // luz da marca: troca sozinha no Natal (14–25/12) e no Ano Novo (26/12–01/01)
+  (() => { const d = new Date(), m = d.getMonth() + 1, dia = d.getDate(); const c = m === 12 && dia >= 14 && dia <= 25 ? '150,28,30' : (m === 12 && dia >= 26) || (m === 1 && dia === 1) ? '170,128,50' : null; if (c) document.documentElement.style.setProperty('--rota-glow', c); })();
   let L = detectar();
   const tx = () => T[L];
 
@@ -738,22 +827,23 @@ footer a{color:var(--mut)}
     $('#subcta').innerHTML = t.sub.map((x) => `<span>${x}</span>`).join('');
     $('#como').innerHTML = t.como.map(([a, b], i) => `<div data-rev><i>0${i + 1}</i><b>${a}</b><p>${b}</p></div>`).join('');
     $('#port').innerHTML = PORT.map((p) => `<figure class="item ${p.larg ? 'larg' : ''}"><div class="tela"><img src="${PORT_IMG[p.img]}" alt="${p.nome}" loading="lazy" decoding="async"></div><figcaption><b>${p.nome}</b><small>${typeof p.onde === 'string' ? p.onde : p.onde[L]}</small><span class="tag">${t.tipos[p.tipo]}</span></figcaption></figure>`).join('');
-    $('#interesses').innerHTML = Object.entries(t.ops).map(([k, [a, b]]) => `<button type="button" class="op" data-v="${k}" aria-pressed="${st.interesses.has(k)}"><span class="e">${IC[k] || ''}</span><b>${a}</b><small>${b}</small></button>`).join('');
+    $('#interesses').innerHTML = Object.entries(t.ops).map(([k, [a, b]]) => `<button type="button" class="op" data-v="${k}" aria-pressed="${st.interesses.has(k)}"${k === 'social' ? ` aria-controls="planos" aria-expanded="${st.interesses.has('social')}"` : ''}><span class="e">${IC[k] || ''}</span><b>${a}</b><small>${b}</small></button>`).join('');
     const pais = $('#fPais'), atual = pais.value;
     pais.innerHTML = t.paises.map(([v, n]) => `<option value="${v}">${n}</option>`).join('');
     pais.value = atual && t.paises.some(([v]) => v === atual) ? atual : t.paisPadrao;
     if (!st.ddiMexido) $('#fDdi').value = t.ddi;
-    botoes(); revelar();
+    botoes(); revelar(); desenhaPlanos();
   }
   $$('[data-lang]').forEach((b) => b.addEventListener('click', () => { L = b.dataset.lang; local.set('rota-lang', L); aplicar(); }));
 
   // ================= formulário =================
-  const st = { passo: 1, interesses: new Set(), temSite: null, pref: 'whatsapp', ddiMexido: false, enviando: false };
+  const st = { plano: null, passo: 1, interesses: new Set(), temSite: null, pref: 'whatsapp', ddiMexido: false, enviando: false };
   $('#fDdi').addEventListener('change', () => (st.ddiMexido = true));
   $('#interesses').addEventListener('click', (e) => {
     const b = e.target.closest('.op'); if (!b) return; const v = b.dataset.v;
     st.interesses.has(v) ? st.interesses.delete(v) : st.interesses.add(v);
     b.setAttribute('aria-pressed', String(st.interesses.has(v))); erro('');
+    if (v === 'social') { b.setAttribute('aria-expanded', String(st.interesses.has('social'))); if (st.interesses.has('social')) abrirPlanos(); else fecharPlanos(); }
   });
   $('#temSite').addEventListener('click', (e) => {
     const b = e.target.closest('button'); if (!b) return; st.temSite = b.dataset.v === 'true';
@@ -765,6 +855,36 @@ footer a{color:var(--mut)}
   });
   $$('.campo input, .campo textarea, .campo select').forEach((i) => i.addEventListener('input', () => { i.classList.remove('inv'); erro(''); }));
   $('#fAceite').addEventListener('change', () => erro(''));
+
+  // ===== planos de social media (seção que abre abaixo das opções) =====
+  const PL = {
+    essencial: { nome: 'Essencial', preco: '900', valor: 900, posts: 3, reels: 2, stories: 3 },
+    pro: { nome: 'Pro', preco: '1.497', valor: 1497, posts: 5, reels: 3, stories: 5 },
+    premium: { nome: 'Premium', preco: '2.197', valor: 2197, posts: 7, reels: 5, stories: 7 },
+  };
+  const WA = '5547988486823';
+  const PLT = {
+    'pt-BR': { ey: 'Planos de social media · assinatura mensal', tit: 'Sua marca presente nas redes <span class="kw">toda semana</span><span class="it">sem você se preocupar.</span>', balao: 'escolha seu plano!', mes: 'mês', posts: 'posts no feed', reels: 'reels', stories: 'dias de stories', todos: 'stories', sem: 'por semana', dia: 'todos os dias', esc: 'Escolher ', on: '✓ Selecionado', selo: 'Mais completo', duv: 'Tirar dúvidas no WhatsApp', trocar: 'trocar plano', escolhido: 'Plano escolhido', erro: 'Escolha um plano de social media', e: 'e', resumoTodos: 'stories todos os dias', resumoSem: 'dias de stories por semana', resumoPR: (n, r) => `${n} posts, ${r} reels`, waMsg: (n, p) => `Olá! Tenho interesse no plano ${n} de social media (R$ ${p}/mês).`, noCrm: 'Plano de social media' },
+    'pt-PT': { ey: 'Planos de redes sociais · assinatura mensal', tit: 'A sua marca presente nas redes <span class="kw">todas as semanas</span><span class="it">sem preocupações.</span>', balao: 'escolha o seu plano!', mes: 'mês', posts: 'publicações no feed', reels: 'reels', stories: 'dias de stories', todos: 'stories', sem: 'por semana', dia: 'todos os dias', esc: 'Escolher ', on: '✓ Selecionado', selo: 'Mais completo', duv: 'Tirar dúvidas no WhatsApp', trocar: 'trocar plano', escolhido: 'Plano escolhido', erro: 'Escolha um plano de redes sociais', e: 'e', resumoTodos: 'stories todos os dias', resumoSem: 'dias de stories por semana', resumoPR: (n, r) => `${n} publicações, ${r} reels`, waMsg: (n, p) => `Olá! Tenho interesse no plano ${n} de redes sociais (R$ ${p}/mês).`, noCrm: 'Plano de social media' },
+    en: { ey: 'Social media plans · monthly subscription', tit: 'Your brand on social media <span class="kw">every week</span><span class="it">without the hassle.</span>', balao: 'pick your plan!', mes: 'mo', posts: 'feed posts', reels: 'reels', stories: 'days of stories', todos: 'stories', sem: 'per week', dia: 'every day', esc: 'Choose ', on: '✓ Selected', selo: 'Most complete', duv: 'Ask on WhatsApp', trocar: 'change plan', escolhido: 'Chosen plan', erro: 'Choose a social media plan', e: 'and', resumoTodos: 'stories every day', resumoSem: 'days of stories per week', resumoPR: (n, r) => `${n} posts, ${r} reels`, waMsg: (n, p) => `Hi! I'm interested in the ${n} social media plan (R$ ${p}/month).`, noCrm: 'Plano de social media' },
+  };
+  const ICWA = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>';
+  function resumoPlano(k, lg) { const t = PLT[lg || L], p = PL[k]; return `${t.resumoPR(p.posts, p.reels)} ${t.e} ${p.stories === 7 ? t.resumoTodos : p.stories + ' ' + t.resumoSem}`; }
+  function desenhaPlanos() {
+    const t = PLT[L];
+    $$('[data-pl]').forEach((el) => (el.innerHTML = t[el.dataset.pl]));
+    $('#plCards').innerHTML = Object.entries(PL).map(([k, p]) => `<div class="pc ${k === 'premium' ? 'prem' : ''} ${st.plano === k ? 'on' : ''}">${k === 'premium' ? `<span class="selo">${t.selo}</span>` : ''}<span class="nm">${p.nome}</span><div class="pr"><i>R$</i><b>${p.preco}</b><small>/${t.mes}</small></div><ul><li><b>${p.posts}</b><span>${t.posts}<em>${t.sem}</em></span></li><li><b>${p.reels}</b><span>${t.reels}<em>${t.sem}</em></span></li>${p.stories === 7 ? `<li><b>7/7</b><span>${t.todos}<em>${t.dia}</em></span></li>` : `<li><b>${p.stories}</b><span>${t.stories}<em>${t.sem}</em></span></li>`}</ul><button type="button" class="esc" data-plano="${k}" aria-pressed="${st.plano === k}">${st.plano === k ? t.on : t.esc + p.nome}</button><a class="wa" href="https://wa.me/${WA}?text=${encodeURIComponent(t.waMsg(p.nome, p.preco))}" target="_blank" rel="noopener">${ICWA}${t.duv}</a></div>`).join('');
+    const r = $('#plResumo');
+    if (st.plano) { const p = PL[st.plano]; r.innerHTML = `<span><b>${t.escolhido}:</b> ${p.nome} · R$ ${p.preco}/${t.mes} · ${resumoPlano(st.plano)}</span><button type="button" data-trocar>${t.trocar}</button>`; r.hidden = false; }
+    else { r.hidden = true; r.innerHTML = ''; }
+    $('#fPlano').value = st.plano || ''; $('#fPlanoValor').value = st.plano ? PL[st.plano].valor : '';
+    if ($('#plErro').textContent) $('#plErro').textContent = st.plano ? '' : t.erro;
+  }
+  const rolar = (el, bloco) => { const reduz = matchMedia('(prefers-reduced-motion: reduce)').matches; el.scrollIntoView({ behavior: reduz ? 'auto' : 'smooth', block: bloco || 'start' }); };
+  function abrirPlanos() { const d = $('#planos'); desenhaPlanos(); d.inert = false; d.classList.add('aberto'); setTimeout(() => rolar($('#plIn')), 320); }
+  function fecharPlanos() { const d = $('#planos'); st.plano = null; $('#plErro').textContent = ''; desenhaPlanos(); d.classList.remove('aberto'); d.inert = true; }
+  $('#plCards').addEventListener('click', (e) => { const b = e.target.closest('[data-plano]'); if (!b) return; st.plano = b.dataset.plano; $('#plErro').textContent = ''; erro(''); desenhaPlanos(); setTimeout(() => rolar($('#plResumo'), 'nearest'), 60); });
+  $('#plResumo').addEventListener('click', (e) => { if (e.target.closest('[data-trocar]')) rolar($('#plCards'), 'center'); });
 
   function erro(m, campo) { $('#erro').textContent = m || ''; if (campo) { campo.classList.add('inv'); campo.focus(); } }
   function botoes() {
@@ -790,6 +910,7 @@ footer a{color:var(--mut)}
   function validar(n) {
     const t = tx().e;
     if (n === 1 && !st.interesses.size) return erro(t.interesse), false;
+    if (n === 1 && st.interesses.has('social') && !st.plano) { $('#plErro').textContent = PLT[L].erro; rolar($('#plIn')); return false; }
     if (n === 2) {
       if (limpo($('#fEmpresa')).length < 2) return erro(t.empresa, $('#fEmpresa')), false;
       if (limpo($('#fCidade')).length < 2) return erro(t.cidade, $('#fCidade')), false;
@@ -819,7 +940,8 @@ footer a{color:var(--mut)}
       nome: limpo($('#fNome')), empresa: limpo($('#fEmpresa')), nicho: limpo($('#fNicho')), cidade: limpo($('#fCidade')), pais: $('#fPais').value,
       instagram: limpo($('#fIg')), telefone: tel ? ($('#fDdi').value || '+') + tel : '', email: limpo($('#fEmail')), idioma: L,
       interesses: ints.length ? ints : ['outro'], tem_site: st.temSite === null ? null : String(st.temSite), site_atual: st.temSite ? limpo($('#fSite')) : '',
-      mensagem: [extras.length ? '[' + (L === 'en' ? 'Interested in: ' : 'Interesse: ') + extras.join(', ') + ']' : '', st.interesses.has('nao_sei') ? (L === 'en' ? '[Not sure yet, wants a suggestion]' : '[Ainda não sabe, quer sugestão]') : '', limpo($('#fMsg'))].filter(Boolean).join(' '),
+      mensagem: [st.interesses.has('social') && st.plano ? '[Plano de social media: ' + PL[st.plano].nome + ' · R$ ' + PL[st.plano].preco + '/mês · ' + resumoPlano(st.plano, 'pt-BR') + ']' : '', extras.length ? '[' + (L === 'en' ? 'Interested in: ' : 'Interesse: ') + extras.join(', ') + ']' : '', st.interesses.has('nao_sei') ? (L === 'en' ? '[Not sure yet, wants a suggestion]' : '[Ainda não sabe, quer sugestão]') : '', limpo($('#fMsg'))].filter(Boolean).join(' '),
+      plano_social_media: st.interesses.has('social') && st.plano ? st.plano : null, plano_social_media_valor: st.interesses.has('social') && st.plano ? PL[st.plano].valor : null,
       contato_preferido: st.pref, utm, empresa_site: $('#fIsca').value, unidade: 'rota-studio',
     };
   }
